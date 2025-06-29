@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:frute_hub/constants.dart';
 import 'package:frute_hub/core/utils/app_colors.dart';
 import 'package:frute_hub/core/widgets/custom_botton.dart';
+import 'package:frute_hub/features/auth/presentation/views/login_view.dart';
 import 'package:frute_hub/features/on_bording/presentaion/views/widgets/on_bording_page_view.dart';
 
 class OnBordingViewBody extends StatefulWidget {
@@ -64,7 +65,12 @@ class _OnBordingViewBodyState extends State<OnBordingViewBody> {
           maintainState: true,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kHorozentalPadding),
-            child: CustomBotton(onPressed: () {}, text: 'ابدأ الان'),
+            child: CustomBotton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, LoginView.routeName);
+              },
+              text: 'ابدأ الان',
+            ),
           ),
         ),
         SizedBox(height: 46),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:frute_hub/core/utils/app_colors.dart';
 import 'package:frute_hub/core/utils/app_images.dart';
+import 'package:frute_hub/core/utils/app_text_styles.dart';
 import 'package:frute_hub/features/on_bording/presentaion/views/widgets/page_view_item.dart';
 
 class OnBordingPageView extends StatelessWidget {
@@ -12,22 +14,32 @@ class OnBordingPageView extends StatelessWidget {
       controller: pageController,
       children: [
         PageViewItem(
-          isVisible:
-              (pageController.hasClients ? pageController.page!.round() : 0) ==
-              0,
+          isVisible: true,
           image: Assets.assetsImagesPageItem1Image,
           backgroundImage: Assets.assetsImagesPageItem1BackgroundImage,
           subTitle:
               'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('مرحبًا بك في'), Text('Fruit'), Text('HUB')],
+            children: [
+              Text('مرحبًا بك في', style: TextStyles.bold23),
+              Text(
+                ' HUB',
+                style: TextStyles.bold23.copyWith(
+                  color: AppColors.secundaryColor,
+                ),
+              ),
+              Text(
+                'Fruit',
+                style: TextStyles.bold23.copyWith(
+                  color: AppColors.primaryColor,
+                ),
+              ),
+            ],
           ),
         ),
         PageViewItem(
-          isVisible:
-              (pageController.hasClients ? pageController.page!.round() : 0) ==
-              0,
+          isVisible: false,
 
           image: Assets.assetsImagesPageItem2Image,
           backgroundImage: Assets.assetsImagesPageItem2BackgroundImage,
