@@ -3,13 +3,18 @@ import 'package:frute_hub/core/utils/app_images.dart';
 import 'package:frute_hub/features/on_bording/presentaion/views/widgets/page_view_item.dart';
 
 class OnBordingPageView extends StatelessWidget {
-  const OnBordingPageView({super.key});
+  const OnBordingPageView({super.key, required this.pageController});
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: pageController,
       children: [
         PageViewItem(
+          isVisible:
+              (pageController.hasClients ? pageController.page!.round() : 0) ==
+              0,
           image: Assets.assetsImagesPageItem1Image,
           backgroundImage: Assets.assetsImagesPageItem1BackgroundImage,
           subTitle:
@@ -20,6 +25,10 @@ class OnBordingPageView extends StatelessWidget {
           ),
         ),
         PageViewItem(
+          isVisible:
+              (pageController.hasClients ? pageController.page!.round() : 0) ==
+              0,
+
           image: Assets.assetsImagesPageItem2Image,
           backgroundImage: Assets.assetsImagesPageItem2BackgroundImage,
           subTitle:
